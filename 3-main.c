@@ -9,13 +9,13 @@
  */
 int main(void)
 {
-    int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
-    size_t n = sizeof(array) / sizeof(array[0]);
+    int array[] = {1};
+    /*size_t n = sizeof(array) / sizeof(array[0]);*/
 
-    print_array(array, n);
+    print_array(array, 1);
     printf("\n");
-    quick_sort(array, n);
+    quick_sort(array, 1);
     printf("\n");
-    print_array(array, n);
+    print_array(array, 1);
     return (0);
 }
