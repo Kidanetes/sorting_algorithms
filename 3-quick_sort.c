@@ -29,18 +29,17 @@ void quick_sort2(int *array, int *new_array, size_t new_size, size_t size)
 	{
 		if (new_array[i] <= pivot)
 		{
-			tmp = new_array[j];
-			new_array[j] = new_array[i];
-			new_array[i] = tmp;
+			if (i != j)
+			{
+				tmp = new_array[j];
+				new_array[j] = new_array[i];
+				new_array[i] = tmp;
+				print_array(array, size);
+			}
 			j++;
-			print_array(array, size);
 		}
 	}
 	j--;
-	/*tmp = new_array[j];
-	new_array[j] = pivot;
-	new_array[i] = tmp;
-	print_array(array, size);*/
 	quick_sort2(array, new_array, j, size);
 	quick_sort2(array, &new_array[j + 1], (int)new_size - j - 1, size);
 }
