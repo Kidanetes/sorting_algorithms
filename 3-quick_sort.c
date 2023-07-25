@@ -11,6 +11,7 @@ void quick_sort(int *array, size_t size)
 		return;
 	quick_sort2(array, array, size, size);
 }
+
 /**
  * quick_sort2 - sort an array using
  * quicksort aligorithm
