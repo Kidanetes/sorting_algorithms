@@ -73,11 +73,11 @@ void merge(int *array, int p, int q, int r)
 					array[k] = tmp;
 				}
 			}
-			i++;
-			continue;
+			/*i++;*/
+			/*continue;*/
 		}
 		i++;
-		j++;
+		/*j++;*/
 	}
 	print_array(&(array[p]), r - p + 1);
 }
