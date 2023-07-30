@@ -56,7 +56,7 @@ void merge(int *array, int p, int q, int r)
 
 	i = p;
 	j = q + 1;
-	while (i <= q && j <= r)
+	while (i <= q)
 	{
 		if (array[i] > array[j])
 		{
@@ -73,11 +73,8 @@ void merge(int *array, int p, int q, int r)
 					array[k] = tmp;
 				}
 			}
-			/*i++;*/
-			/*continue;*/
 		}
 		i++;
-		/*j++;*/
 	}
 	print_array(&(array[p]), r - p + 1);
 }
