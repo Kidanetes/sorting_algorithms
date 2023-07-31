@@ -59,27 +59,28 @@ void radix_sort(int *array, size_t size)
  */
 void sort(int *array, int *digit, int *index, size_t size)
 {
-	int i, j, min_index, tmp;
+	int i, j, status, tmp;
 
-	for (i = 0; i < ((int)size) - 1; i++)
+	for (j = 0; j < ((int)size) - 1; j++)
 	{
-		min_index = i;
-		for (j = i + 1; j < (int)size; j++)
+		status = 0;
+		for (i = 0; i < (int)size - 1; i++)
 		{
-			if (digit[j] < digit[min_index])
-				min_index = j;
+			if (digit[i] > digit[i + 1])
+			{
+				tmp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = tmp;
+				tmp = index[i];
+				index[i] = index[i + 1];
+				index[i + 1] = tmp;
+				tmp = digit[i];
+				digit[i] = digit[i + 1];
+				digit[i + 1] = tmp;
+				status = 1;
+			}
 		}
-		if (min_index != i)
-		{
-			tmp = array[i];
-			array[i] = array[min_index];
-			array[min_index] = tmp;
-			tmp = index[i];
-			index[i] = index[min_index];
-			index[min_index] = tmp;
-			tmp = digit[i];
-			digit[i] = digit[min_index];
-			digit[min_index] = tmp;
-		}
+		if (status == 0)
+			break;
 	}
 }
